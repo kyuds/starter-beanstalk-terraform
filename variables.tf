@@ -40,3 +40,35 @@ variable "aurora_subnet_azs" {
     description = "corresponding subnet AZ locations for aurora db"
     default = [ "us-east-1a", "us-east-1b", "us-east-1c" ]
 }
+
+# aurora
+variable "aurora_db_name" {
+    type = string
+    description = "aurora db name"
+    default = "db"
+}
+
+variable "aurora_master_username" {
+    type = string
+    description = "aurora master username"
+    default = "admin"
+}
+
+variable "aurora_master_password" {
+    type = string
+    description = "aurora master password"
+    default = "supersecretpassword123"
+}
+
+variable "aurora_instance_count" {
+    type = number
+    description = "number of aurora cluster instances"
+    default = 2
+}
+
+# bastion
+variable "bastion_host_pem_file" {
+    type = string
+    description = "pem file name for bastion host ssh access"
+    default = "key.pem"
+}

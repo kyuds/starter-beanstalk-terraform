@@ -21,11 +21,6 @@ terraform {
 }
 
 # general settings
-variable "environment" {
-    type = string
-    default = "prod"
-}
-
 variable "region" {
     type = string
     default = "us-east-1"
@@ -40,5 +35,5 @@ resource "random_id" "random_identifier" {
 }
 
 locals {
-    tag = "sample-${var.environment}-${random_id.random_identifier.hex}"
+    tag = "sample-${random_id.random_identifier.hex}"
 }
