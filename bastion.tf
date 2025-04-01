@@ -78,12 +78,12 @@ resource "aws_instance" "bastion_host" {
         dnf update -y
         dnf install -y mariadb105
 
-        cat <<- 'EOT' > /home/ec2-user/connect_db.sh
+        cat <<- 'EOT' > /home/ec2-user/connect.sh
         #!/bin/bash
         mysql -h ${aws_rds_cluster.aurora_cluster.endpoint} -P 3306 -D ${var.aurora_db_name} -u ${var.aurora_master_username} -p
         EOT
 
-        chmod +x /home/ec2-user/connect_db.sh
+        chmod +x /home/ec2-user/connect.sh
     EOF
     monitoring = false
     

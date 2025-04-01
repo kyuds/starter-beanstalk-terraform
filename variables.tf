@@ -72,3 +72,9 @@ variable "bastion_host_pem_file" {
     description = "pem file name for bastion host ssh access"
     default = "key.pem"
 }
+
+# application load balancer
+variable "alb_acm_certificate" {
+    type = string
+    description = "ACM certificate arn for application load balancer HTTPS"
+}
