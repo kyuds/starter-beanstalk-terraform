@@ -1,4 +1,4 @@
-# elastic beanstalk application for phishing block admin
+# elastic beanstalk application for admin
 resource "aws_elastic_beanstalk_application" "eb_admin" {
     name = "${local.tag}-eb-admin"
     appversion_lifecycle {
